@@ -25,6 +25,18 @@ dns:
     ipcidr:
     - 240.0.0.0/4
 proxies:
+- name: Unknown_hysteria2_01
+  type: hysteria2
+  server: 2001:bc8:32d7:302::11
+  port: 20088
+  password: dongtaiwang.com
+  sni: apple.com
+  skip-cert-verify: true
+  alpn:
+  - h3
+  protocol: udp
+  up: 11 Mbps
+  down: 55 Mbps
 - name: Unknown_hysteria2_11
   type: hysteria2
   server: 2001:bc8:32d7:302::11
@@ -75,6 +87,18 @@ proxies:
   reduce-rtt: true
   udp-relay-mode: native
   congestion-controller: bbr
+- name: Unknown_hysteria2_51
+  type: hysteria2
+  server: 2001:bc8:32d7:302::17
+  port: 20088
+  password: dongtaiwang.com
+  sni: apple.com
+  skip-cert-verify: true
+  alpn:
+  - h3
+  protocol: udp
+  up: 11 Mbps
+  down: 55 Mbps
 - name: Unknown_hysteria_61
   type: hysteria
   server: 2604:6600:2004::18b
@@ -96,6 +120,18 @@ proxies:
   alpn:
   - h3
   protocol: udp
+  up: 11 Mbps
+  down: 55 Mbps
+- name: The Netherlands_Amsterdam_hysteria_81
+  type: hysteria
+  server: 109.104.153.91
+  port: 37519
+  ports: 10000-20000
+  auth_str: dongtaiwang.com
+  alpn:
+  - h3
+  sni: apple.com
+  skip-cert-verify: true
   up: 11 Mbps
   down: 55 Mbps
 - name: United States_None_hysteria_91
@@ -812,6 +848,20 @@ proxies:
   skip-cert-verify: true
   alpn:
   - h3
+- name: The Netherlands_Amsterdam_hy_3
+  type: hysteria
+  server: 109.104.153.91
+  port: 37519
+  ports: 10000-20000
+  auth_str: dongtaiwang.com
+  up: 1000
+  down: 1000
+  fast-open: true
+  protocol: udp
+  sni: apple.com
+  skip-cert-verify: true
+  alpn:
+  - h3
 - name: United States_Los Angeles_hy2_0
   type: hysteria2
   server: 104.168.10.176
@@ -821,6 +871,14 @@ proxies:
   sni: apple.com
   skip-cert-verify: true
 - name: United States_Los Angeles_hy2_1
+  type: hysteria2
+  server: 104.168.10.176
+  port: 35205
+  password: dongtaiwang.com
+  fast-open: true
+  sni: apple.com
+  skip-cert-verify: true
+- name: United States_Los Angeles_hy2_2
   type: hysteria2
   server: 104.168.10.176
   port: 35205
@@ -870,12 +928,15 @@ proxy-groups:
   proxies:
   - 自动选择
   - DIRECT
+  - Unknown_hysteria2_01
   - Unknown_hysteria2_11
   - Unknown_tuic_21
   - Unknown_hysteria2_31
   - Unknown_tuic_41
+  - Unknown_hysteria2_51
   - Unknown_hysteria_61
   - United States_Los Angeles_hysteria_71
+  - The Netherlands_Amsterdam_hysteria_81
   - United States_None_hysteria_91
   - Unknown_hysteria_92
   - Ireland_Dublin_ss_101
@@ -943,8 +1004,10 @@ proxy-groups:
   - The Netherlands_Amsterdam_hy_0
   - The Netherlands_Amsterdam_hy_1
   - The Netherlands_Amsterdam_hy_2
+  - The Netherlands_Amsterdam_hy_3
   - United States_Los Angeles_hy2_0
   - United States_Los Angeles_hy2_1
+  - United States_Los Angeles_hy2_2
   - United States_Los Angeles_hy2_3
   - Unknown_reality_0
   - Unknown_reality_3
@@ -954,12 +1017,15 @@ proxy-groups:
   interval: 300
   tolerance: 50
   proxies:
+  - Unknown_hysteria2_01
   - Unknown_hysteria2_11
   - Unknown_tuic_21
   - Unknown_hysteria2_31
   - Unknown_tuic_41
+  - Unknown_hysteria2_51
   - Unknown_hysteria_61
   - United States_Los Angeles_hysteria_71
+  - The Netherlands_Amsterdam_hysteria_81
   - United States_None_hysteria_91
   - Unknown_hysteria_92
   - Ireland_Dublin_ss_101
@@ -1027,8 +1093,10 @@ proxy-groups:
   - The Netherlands_Amsterdam_hy_0
   - The Netherlands_Amsterdam_hy_1
   - The Netherlands_Amsterdam_hy_2
+  - The Netherlands_Amsterdam_hy_3
   - United States_Los Angeles_hy2_0
   - United States_Los Angeles_hy2_1
+  - United States_Los Angeles_hy2_2
   - United States_Los Angeles_hy2_3
   - Unknown_reality_0
   - Unknown_reality_3
